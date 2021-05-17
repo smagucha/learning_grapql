@@ -86,3 +86,58 @@ class Mutation(graphene.ObjectType):
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
+
+# querying all books
+# query {
+#   allBooks {
+#     id
+#     title
+#     author
+#     yearPublished
+#     review
+#   }
+# }
+
+
+# querying a single book
+
+# query {
+#   book(bookId: 2) {
+#     id
+#     title
+#     author
+#   }
+# }
+
+# creating a book in the table/model
+# mutation createMutation {
+#   createBook(bookData: {title: "Things Apart", author: "Chinua Achebe", yearPublished: "1985", review: 3}) {
+#     book {
+#       title,
+#       author,
+#       yearPublished,
+#       review
+#     }
+#   }
+# }
+
+# updating book details
+# mutation updateMutation {
+#   updateBook(bookData: {id: 6, title: "Things Fall Apart", author: "Chinua Achebe", yearPublished: "1958", review: 5}) {
+#     book {
+#       title,
+#       author,
+#       yearPublished,
+#       review
+#     }
+#   }
+# }
+
+# deleting a book from table/model
+# mutation deleteMutation{
+#   deleteBook(id: 6) {
+#     book {
+#       id
+#     } 
+#   }
+# }
